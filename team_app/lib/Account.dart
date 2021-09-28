@@ -2,7 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:team_app/model/UsernameForm.dart';
 
-class Account extends StatelessWidget {
+class Account extends StatefulWidget {
+  @override
+  _AccountState createState() => _AccountState();
+}
+
+class _AccountState extends State<Account> {
+  final _formKey = GlobalKey<FormState>();
+
+  String? _Username;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +58,67 @@ class Account extends StatelessWidget {
                       style: TextStyle(fontSize: 25.0),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/use');
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext Context) {
+                          return AlertDialog(
+                            content: Container(
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                  Form(
+                                    key: _formKey,
+                                    child: TextFormField(
+                                      style: TextStyle(
+                                        fontSize: 35.0,
+                                      ),
+                                      decoration: InputDecoration(
+                                        border: UnderlineInputBorder(),
+                                        labelText: 'แก้ไข Username',
+                                        icon: Icon(Icons.edit),
+                                      ),
+                                      validator: (value) {
+                                        if (value == null || value.isEmpty) {
+                                          return 'กรุณาแก้ไข Username';
+                                        }
+                                        return null;
+                                      },
+                                      onSaved: (value) {
+                                        _Username = value;
+                                      },
+                                      initialValue: context
+                                          .read<UsernameFormModel>()
+                                          .Username,
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                      top: 20.0,
+                                    ),
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        if (_formKey.currentState!.validate()) {
+                                          _formKey.currentState!.save();
+
+                                          context
+                                              .read<UsernameFormModel>()
+                                              .Username = _Username;
+
+                                          Navigator.pop(context);
+                                        }
+                                      },
+                                      child: Text(
+                                        'บันทึก',
+                                        style: TextStyle(
+                                          fontSize: 25.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ])),
+                          );
+                        },
+                      );
                     },
                   ))
             ])

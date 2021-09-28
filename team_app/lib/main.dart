@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:team_app/Changeuser.dart';
 import 'package:provider/provider.dart';
+import 'package:team_app/Listviewtest.dart';
 import 'package:team_app/model/UsernameForm.dart';
 
 import 'Account.dart';
 import 'History.dart';
-import 'Changeuser.dart';
+import 'Listviewtest.dart';
 
 void main() {
   runApp(
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           '/acc': (context) => Account(),
           '/his': (context) => History(),
           '/use': (context) => Changeuser(),
+          '/list': (context) => Listviewtest(),
         });
   }
 }
