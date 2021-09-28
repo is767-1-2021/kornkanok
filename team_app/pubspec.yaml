@@ -1,0 +1,40 @@
+name: team_app
+description: A new Flutter project.
+
+
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  dynamic_treeview: ^1.0.0+2
+  flutter_tree: ^1.1.0
+  cupertino_icons: ^1.0.2
+  list_treeview: ^0.3.0
+  provider: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+
+  uses-material-design: true
+  assets:
+    - asset/Alif.jpg
+  
+  fonts:
+    - family: JasmineUPC
+      fonts: 
+        - asset: fonts/UPCJB.TTF
+        - asset: fonts/UPCJBI.TTF
+        - asset: fonts/UPCJI.TTF
+        - asset: fonts/UPCJL.TTF
