@@ -181,7 +181,8 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-              content: Text("Are you sure you want to abandon the form? Any changes will be lost."),
+              content: Text(
+                  "Are you sure you want to abandon the form? Any changes will be lost."),
               actions: <Widget>[
                 FlatButton(
                   child: Text("Cancel"),
