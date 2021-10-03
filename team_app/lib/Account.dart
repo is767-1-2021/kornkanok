@@ -53,7 +53,7 @@ class _AccountState extends State<Account> {
               Container(
                   padding: EdgeInsets.only(left: 20.0),
                   child: ElevatedButton(
-                    child: const Text(
+                    child: Text(
                       'แก้ไข username',
                       style: TextStyle(fontSize: 25.0),
                     ),

@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Item {
-  String headerValue;
-  String number;
+  String noti;
+  String update;
+  Icon icon;
 
-  Item({required this.headerValue, required this.number});
+  Item({required this.noti, required this.update, required this.icon});
 }
 
-final List<Item> _item = <Item>[
-  Item(headerValue: 'งวดวันที่ 16 กันยายน 2564', number: '145621'),
-  Item(headerValue: 'งวดวันที่ 16 กันยายน 2564', number: '123435'),
-  Item(headerValue: 'งวดวันที่ 16 กันยายน 2564', number: '346434')
+final List<Item> _item = [
+  Item(
+      noti: 'เสียใจด้วย งวดนี้ไม่ถูกนะ T^T',
+      update: '1 ตุลาคม 2564',
+      icon: Icon(Icons.bolt)),
+  Item(
+      noti: 'คุณยังไม่ได้ชำระคำสั่งซื้อในตะกร้า',
+      update: '30 กันยายน 2564',
+      icon: Icon(Icons.notification_important_rounded)),
+  Item(
+      noti: 'เลขเด็ดแม่น้ำหนึ่ง มาแล้ว!!',
+      update: '29 กันยายน 2564',
+      icon: Icon(Icons.brightness_low))
 ];
 
 class Listviewtest extends StatefulWidget {
@@ -28,18 +38,20 @@ class _ListviewtestState extends State<Listviewtest> {
             style: TextStyle(fontSize: 34.0),
           ),
         ),
-        body: ListView.separated(
-            itemCount: _item.length,
-            itemBuilder: (BuildContext context, int index) {
-              Item item = _item[index];
-              return ListTile(
-                title: Text(
-                  item.headerValue,
-                ),
-                subtitle: Text(item.number),
-                tileColor: Colors.deepPurple[100],
-              );
-            },
-            separatorBuilder: (context, index) => Divider()));
+        body: ListView.builder(
+          itemCount: _item.length,
+          itemBuilder: (BuildContext context, int index) {
+            Item item = _item[index];
+
+            return ListTile(
+              title: Text(
+                item.noti,
+              ),
+              subtitle: Text(item.update),
+              leading: item.icon,
+              tileColor: Colors.deepPurple[70],
+            );
+          },
+        ));
   }
 }

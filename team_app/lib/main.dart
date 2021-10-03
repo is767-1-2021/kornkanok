@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             ),
             fontFamily: 'JasmineUPC',
             bottomAppBarColor: Colors.deepPurple[200]),
-        initialRoute: '/acc',
+        initialRoute: '/list',
         routes: <String, WidgetBuilder>{
           '/acc': (context) => Account(),
           '/his': (context) => History(),

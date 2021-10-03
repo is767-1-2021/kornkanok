@@ -30,6 +30,7 @@ flutter:
   uses-material-design: true
   assets:
     - asset/Alif.jpg
+    - asset/icon.png
   
   fonts:
     - family: JasmineUPC
