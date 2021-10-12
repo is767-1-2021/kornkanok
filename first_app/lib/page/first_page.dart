@@ -9,7 +9,6 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  String? _formData = 'Please click to fill the form';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
