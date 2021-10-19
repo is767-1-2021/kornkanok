@@ -1,5 +1,5 @@
-import 'package:first_app/model/first_form_model.dart';
-import 'package:first_app/page/second_page.dart';
+import 'package:first_app/models/first_form_model.dart';
+import 'package:first_app/pages/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

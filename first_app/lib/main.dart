@@ -1,27 +1,47 @@
-import 'package:first_app/model/first_form_model.dart';
+import 'package:first_app/controllers/todo.dart';
+import 'package:first_app/models/first_form_model.dart';
+import 'package:first_app/pages/todo_page.dart';
+import 'package:first_app/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'page/First_Page.dart';
-import 'page/eighth_page.dart';
-import 'page/fifth_page.dart';
-import 'page/forth_page.dart';
-import 'page/second_page.dart';
-import 'page/seventh_page.dart';
-import 'page/sixth_page.dart';
-import 'page/third_page.dart';
+import 'pages/First_Page.dart';
+import 'pages/eighth_page.dart';
+import 'pages/fifth_page.dart';
+import 'pages/forth_page.dart';
+import 'pages/second_page.dart';
+import 'pages/seventh_page.dart';
+import 'pages/sixth_page.dart';
+import 'pages/third_page.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => FirstFormModel(),
-        ),
-      ],
-      child: MyApp(),
-    ),
-  );
+  var services = HttpServices();
+  var controller = TodoController(services);
+
+  runApp(TodoApp(controller: controller));
+  // runApp(
+  //   MultiProvider(
+  //     providers: [
+  //       ChangeNotifierProvider(
+  //         create: (context) => FirstFormModel(),
+  //       ),
+  //     ],
+  //     child: MyApp(),
+  //   ),
+  // );
+}
+
+class TodoApp extends StatelessWidget {
+  final TodoController controller;
+  TodoApp({required this.controller});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: TodoPage(
+        controller: controller,
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
