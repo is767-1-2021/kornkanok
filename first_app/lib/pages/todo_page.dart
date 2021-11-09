@@ -31,6 +31,10 @@ class _TodoPageState extends State<TodoPage> {
     });
   }
 
+  void _updateTodos(int _id, bool _completed) {
+    widget.controller.updateTodo(_id, _completed);
+  }
+
   Widget get body => isLoading
       ? CircularProgressIndicator()
       : ListView.builder(
@@ -40,9 +44,14 @@ class _TodoPageState extends State<TodoPage> {
               return Text('Tap button to fetch to Todos');
             }
             return CheckboxListTile(
-              onChanged: null,
               value: todos[index].completed,
               title: Text(todos[index].title),
+              onChanged: (bool? value) {
+                setState(() {
+                  todos[index].completed = value!;
+                  _updateTodos(todos[index].id, value);
+                });
+              },
             );
           },
         );

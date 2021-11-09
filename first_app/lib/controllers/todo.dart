@@ -4,7 +4,7 @@ import 'package:first_app/models/todo.dart';
 import 'package:first_app/services/services.dart';
 
 class TodoController {
-  final HttpServices services;
+  final FirebaseServices services;
   List<Todo> todos = List.empty();
 
   StreamController<bool> onSyncController = StreamController();
@@ -17,5 +17,9 @@ class TodoController {
     todos = await services.getTodos();
     onSyncController.add(false);
     return todos;
+  }
+
+  void updateTodo(int _id, bool _completed) {
+    services.updateTodos(_id, _completed);
   }
 }
