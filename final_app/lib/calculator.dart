@@ -259,7 +259,7 @@ class _CalculatorState extends State<Calculator> {
 
   void addOperatorToAnswer(String op) {
     setState(() {
-      if (answer != "0" && !calculateMode) {
+      if (answer != "0" && !calculateMod) {
         calculateMode = true;
         answerTemp = answer;
         inputFull += operator + " " + answerTemp;
