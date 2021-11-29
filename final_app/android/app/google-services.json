@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "546280445977",
+    "project_id": "is767-2021-kornkanok",
+    "storage_bucket": "is767-2021-kornkanok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546280445977:android:8e88f971a5e1c29fd83288",
+        "android_client_info": {
+          "package_name": "com.example.final_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546280445977-mvv70nfhcpdd5gbn55vl5inl3r7dkk51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGKvYBlGHsmz0pWA0WQS5WFzXPBLIo42M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546280445977-mvv70nfhcpdd5gbn55vl5inl3r7dkk51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
